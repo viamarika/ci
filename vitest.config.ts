@@ -7,6 +7,14 @@ export default defineConfig({
       provider: "v8",
       reporter: ["text", "lcov"],
       reportOnFailure: true,
+      thresholds: {
+        perFile: true,
+        branches: 80,
+        "src/{filter,reduce,add,get,words}.js": {
+          branches: 100,
+          perFile: true,
+        },
+      },
       include: [
         "src/filter.js",
         "src/reduce.js",
