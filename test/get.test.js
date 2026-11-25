@@ -99,7 +99,23 @@ describe("get", () => {
             )).toBe(198);
         });
     });
+    
+    describe("Null and undefined object tests", () => {
+        it("Returns default value for null object", () => {
+            expect(get( 
+                null,
+                "a",
+                "default"
+            )).toBe("default");
+        });
 
+        it("Returns undefined for null object when no default is given", () => {
+            expect(get(
+                null,
+                "a"
+            )).toBeUndefined();
+        })
+    })
 
     describe("Special cases", () => {
         it("Does not replace 0 with default value", () => {
@@ -125,6 +141,14 @@ describe("get", () => {
                 "unknown"
             )).toBe("");
         });
+
+        it("Returns null instead of default value", () => {
+            expect(get(
+                { value : null }, 
+                "value",
+                "default"
+            )).toBeNull();
+        })
 
     });
 
