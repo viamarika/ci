@@ -37,7 +37,14 @@ describe("filter",  () => {
     });
 
     describe("Boundary testing", () => {
-  
+        it("Should not crash with null", () => {
+            expect(() => filter(null, x => true)).not.toThrow();
+        });
+
+        it("Should handle undefined", () => {
+            expect( () => filter(undefined, x => true)).not.toThrow();
+        });
+
         it("Should handle single-element array", () => {
             expect(filter([19], x => x > 10)).toStrictEqual([19]);
         });
