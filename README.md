@@ -1,4 +1,4 @@
-# Software testing assignment
+# Software testing assignment [![Coverage Status](https://coveralls.io/repos/github/viamarika/ci/badge.svg?branch=main)](https://coveralls.io/github/viamarika/ci?branch=main)
 
 ## Setup
 
