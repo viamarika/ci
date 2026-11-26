@@ -3,6 +3,7 @@ import add from "#src/add.js";
 import reduce from "#src/reduce.js";
 
 // Tests tagged [Phase 1 plan] were designed in the Phase 1 test plan.
+// Test with no tag was added later on.
 // Tests in the [AI-generated] suite were created using Claude Code with the Opus 5.5 model.
 // The only change was moving makeAdd inside the [AI-generated] block.
 
@@ -14,6 +15,10 @@ describe("reduce", () => {
 
     it("[Phase 1 plan] sums the prices in the cart starting from a non-zero initial value", () => {
       expect(reduce([20, 3, 50], add, 100)).toBe(173);
+    });
+
+    it("sums the prices when the cart is an object", () => {
+      expect(reduce({ cheese: 5, bread: 2, milk: 3 }, add, 0)).toBe(10);
     });
   });
 
